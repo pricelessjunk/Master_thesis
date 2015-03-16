@@ -39,8 +39,8 @@ public class ProcessText {
                     //String str = line.substring(line.indexOf(">") + 1, line.indexOf("</title>"));
                     System.out.println(str);
                     totalLines++;
-                    if (/*!str.contains("User:") && !str.contains("Talk:") && !str.contains("Image:")*/ 
-                            !str.contains("Wikipedia:") && !str.contains("talk:")) {
+                    if (!str.contains("User:") && !str.contains("Talk:") && !str.contains("Image:")
+                            && !str.contains("Wikipedia:") && !str.contains("talk:")) {
                         out.println(str);
                         linesAfterRemoval++;
                     } else {
