@@ -28,8 +28,8 @@ public class ProcessText {
         int linesAfterRemoval = 0;
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("/home/kaustuv/work/files/copy.txt"));
-            PrintWriter out = new PrintWriter("/home/kaustuv/work/files/copy2.txt");
+            BufferedReader br = new BufferedReader(new FileReader("/home/kchakrab/workspace/files/namesFinal_old.txt"));
+            PrintWriter out = new PrintWriter("/home/kchakrab/workspace/files/namesFinal.txt");
 
             try {
                 String line = br.readLine();
@@ -39,8 +39,9 @@ public class ProcessText {
                     //String str = line.substring(line.indexOf(">") + 1, line.indexOf("</title>"));
                     System.out.println(str);
                     totalLines++;
-                    if (!str.contains("User:") && !str.contains("Talk:") && !str.contains("Image:")
-                            && !str.contains("Wikipedia:") && !str.contains("talk:")) {
+                    if (/*!str.contains("User:") && !str.contains("Talk:") && !str.contains("Image:")
+                            && !str.contains("Wikipedia:") && !str.contains("talk:")*/!str.contains("Template:") && !str.contains("Portal:") 
+                            && !str.contains("Category:")) {
                         out.println(str);
                         linesAfterRemoval++;
                     } else {
